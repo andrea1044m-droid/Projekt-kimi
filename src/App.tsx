@@ -86,6 +86,9 @@ export default function App() {
     // Open Instagram DM directly
     const url = `https://ig.me/m/andrea_m099`;
     window.open(url, '_blank', 'noopener,noreferrer');
+    
+    // Clear input
+    setQuery('');
   };
 
   return (
@@ -139,7 +142,7 @@ export default function App() {
           </p>
           <div className="flex justify-center gap-4">
             <a href="#elements" className="bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-opacity-90 transition-all flex items-center gap-2">
-              Fillo Eksplorimin <ChevronRight w-5 h-5 />
+              Fillo Eksplorimin <ChevronRight className="w-5 h-5" />
             </a>
           </div>
         </motion.div>
