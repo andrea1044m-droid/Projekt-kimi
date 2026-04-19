@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Atom, 
@@ -21,10 +21,6 @@ import {
   Sparkles,
   Instagram
 } from 'lucide-react';
-import { GoogleGenAI, ThinkingLevel } from "@google/genai";
-
-// Initialization
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 // Types
 interface ChemicalElement {
@@ -80,9 +76,6 @@ export default function App() {
   const [selectedElement, setSelectedElement] = useState<ChemicalElement | null>(null);
   const [elementSearch, setElementSearch] = useState('');
   const [query, setQuery] = useState('');
-  const [response, setResponse] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   const handleAskAI = () => {
     if (!query.trim()) return;
